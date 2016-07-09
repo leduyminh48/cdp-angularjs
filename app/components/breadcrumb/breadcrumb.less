@@ -1,0 +1,54 @@
+@import (reference) "~components/styles/variables";
+
+.oui-breadcrumb {
+  color: @gray-devil;
+  font-size: @fs-14;
+  font-family: @Source_Sans_Pro_Semibold;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: flex;
+
+  > li {
+    position: relative;
+    display: inline-flex;
+    padding-left: 24px;
+
+    &:before {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border: @gray-devil;
+      border-width: 1px 1px 0 0;
+      border-style: solid;
+      transform: @rotate-45;
+      content: '';
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      margin-top: -3px;
+    }
+
+    &.active {
+      color: @gray-devil;
+    }
+
+    &:first-child {
+      padding: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    a {
+      color: @gray-devil;
+      font-size: @fs-14;
+      text-decoration: none;
+    }
+
+  }
+
+
+}

@@ -1,0 +1,23 @@
+<ul class="oui-pagination">
+  <li class="oui-pagination__prev">
+    <button
+      class="btn oui-pagination__btn"
+      type="button"
+      aria-label="previous"
+      ng-disabled="pagination.currentPage <= 1"
+      ng-click=":: pagination.movePagination({ direction: pagination.pgnDirectionLeft })">
+    </button>
+  </li>
+  <li class="oui-pagination__current">
+    <span>Page {{ pagination.currentPage }} of {{ pagination.totalPagesAmount }}, {{ pagination.perPage }} per page</span>
+  </li>
+  <li class="oui-pagination__next">
+    <button
+      class="btn oui-pagination__btn"
+      type="button"
+      aria-label="next"
+      ng-disabled="pagination.currentPage >= pagination.totalPagesAmount"
+      ng-click=":: pagination.movePagination({ direction: pagination.pgnDirectionRight })">
+    </button>
+  </li>
+</ul>

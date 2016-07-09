@@ -1,0 +1,13 @@
+<!--view-request.tpl.html-->
+<osm-content-header>
+  <h4>Place details:</h4>
+</osm-content-header>
+<osm-tabs class="oui-content-wrapper">
+  <a ui-sref=".main"
+     ui-sref-active="active">Main information</a>
+  <a ui-sref=".history"
+     ui-sref-active="active">History</a>
+  <osm-tabs-content>
+    <ui-view class="oui-view-layout"></ui-view>
+  </osm-tabs-content>
+</osm-tabs>

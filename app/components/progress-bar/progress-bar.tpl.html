@@ -1,0 +1,7 @@
+<div class="oui-progress-bar-wrapper"
+     ng-if="progress.isActive">
+  <img src="./icons/loader.svg" alt="Progress bar">
+</div>
+<div class="oui-progress-bar-content"
+     ng-if="!progress.isActive"
+     ng-transclude=""></div>

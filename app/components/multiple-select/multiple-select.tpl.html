@@ -1,0 +1,10 @@
+<span ng-repeat="group in multi.groups">
+  <osm-dropdown-select ng-if=":: multi.isList(group)"
+                       select-list="group.list"
+                       title-key=":: multi.titleKey"
+                       empty-text="multi.emptyText"
+                       selected-item="group.selected"
+                       on-select="multi.onDropdownSelect(group, item)"></osm-dropdown-select>
+  <input type="text" ng-if=":: multi.isModel(group)"
+         ng-model="group[multi.titleKey]">
+</span>

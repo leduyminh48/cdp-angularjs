@@ -1,0 +1,14 @@
+<!--request-history.tpl.html-->
+<div class="oui-request-history">
+  <b>Request Updates:</b>
+  <div class='oui-info-panel'>
+    <table class="oui-table">
+      <tr ng-repeat="item in ctrl.history">
+        <td>{{:: item.date | date: 'shortDate' }}</td>
+        <td>{{:: item.date | date: 'mediumTime' }}</td>
+        <td class="oui-request-status"></td>
+        <td>by <osm-person-telescope-link person-name=":: item.employee "> </osm-person-telescope-link></td>
+      </tr>
+    </table>
+  </div>
+</div>

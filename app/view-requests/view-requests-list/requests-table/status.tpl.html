@@ -1,0 +1,15 @@
+<div class="ui-grid-cell-contents"
+     title="TOOLTIP">
+  <!--for testing tooltip view add attribute - tooltip-is-open="true"-->
+  <a class="oui-status-link"
+     href=""
+     ng-click=":: grid.methods.getStatusLink(row.entity)"
+     ng-class=":: { 'oui-status-link--in-progress': !row.entity.inProgressType }"
+     uib-tooltip="{{ :: grid.methods.getStatusTooltipText(row.entity.status) }}"
+     tooltip-class="oui-custom-tooltip"
+     tooltip-placement="auto top-right"
+     tooltip-append-to-body="false">
+    <osm-request-status status="row.entity.state"
+                        status-indicator="row.entity.inProgressType"></osm-request-status>
+  </a>
+</div>

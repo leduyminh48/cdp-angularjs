@@ -1,0 +1,24 @@
+<div ng-class=":: {
+  'oui-people-search': !search.forGlobal,
+  'oui-global-search': search.forGlobal
+}">
+  <input type="text"
+         class="form-control oui-search__input"
+         placeholder="Search for a person"
+         ng-model="search.search"
+         ng-model-options=":: search.modelOptions"
+         ng-disabled=":: search.disabled"
+         ng-change="search.onChange()"
+         uib-typeahead="person.fullName for person in search.lookupPeople($viewValue)"
+         typeahead-template-url="{{ :: search.itemTemplateUrl }}"
+         typeahead-min-length=":: search.minInputLength"
+         typeahead-on-select=":: search.onClick($item)"
+         typeahead-wait-ms=":: search.waitMs">
+  <span class="oui-search__input-banner"
+        ng-if=":: search.forGlobal">Advanced search</span>
+  <div class="oui-search__clear"
+       ng-if=":: search.clearable"
+       ng-click="search.clearSelected()">
+    <span class="oui-trash"></span>
+  </div>
+</div>

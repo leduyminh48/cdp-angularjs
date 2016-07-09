@@ -1,0 +1,53 @@
+@import (reference) "~styles/variables";
+
+@checkbox-border-color: #e2e4e5;
+
+.oui-checkbox {
+  position: relative;
+  width: 13px;
+  height: 13px;
+  border: none;
+
+  &:after,
+  &:before {
+    content: '';
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: @white;
+    pointer-events: none;
+    border: 1px solid @checkbox-border-color;
+
+  }
+
+
+
+  &:checked:after {
+    mask-image: url('../images/Grid/Approve.svg');
+    background: @gray-dark;
+    width: 9px;
+    height: 9px;
+    top: 2px;
+    left: 2px;
+
+  }
+
+  &:checked:before {
+    background: @white;
+
+  }
+
+
+  &:disabled:after {
+    background-color: @white;
+    border-color: @btn-disable-bc;
+
+  }
+}
+
+.st0 {
+  fill: #000!important;
+}

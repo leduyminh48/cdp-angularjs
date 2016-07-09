@@ -1,0 +1,75 @@
+<form name="" novalidate></form>
+  <div class="row">
+    <label class="oui-label">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Employee*:</div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="oui-typeahead">
+          <osm-people-search ng-model="view.employeeName"
+                             on-select="view.employeeSelected(match)"
+                             on-query="view.searchEmployee(query)"
+                             on-change="view.onEmployeeChanged()"
+                             min-input-length="1"
+                             clearable="true"></osm-people-search>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label class="oui-label">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Current place:</div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <osm-breadcrumb breadcrumb-items="view.currentLocation"></osm-breadcrumb>
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label class="oui-label">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Move to:</div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <osm-move-to ng-model="view.request.to"
+                     on-select="view.onMoveToSelected(newVal, oldVal)">
+        </osm-move-to>
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label class="oui-label">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Room owner:</div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <osm-person-telescope-link person-name="view.targetRoomOwner.fullname"></osm-person-telescope-link>
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label class="oui-label">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Occupied by:</div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="oui-typeahead">
+          <osm-people-search ng-model="view.occupiedByName"
+                             on-select="view.occupiedBySelected(match)"
+                             on-query="view.searchAccessible(query)"
+                             on-change="view.onOccupiedByChanged()"
+                             min-input-length="1"
+                             clearable="true"></osm-people-search>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label class="oui-label">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Comments:</div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <textarea class="form-control oui-textarea"
+                  ng-model="view.request.comment"
+                  min="0"
+                  max="255">
+        </textarea>
+      </div>
+    </label>
+  </div>
+</form>

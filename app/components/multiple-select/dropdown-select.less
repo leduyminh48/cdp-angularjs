@@ -1,0 +1,55 @@
+@import (reference) "~components/styles/variables";
+
+body {
+  .dropdown {
+
+    & > button.btn {
+      position: relative;
+      padding-right: 32px;
+      margin-right: 5px;
+      border-color: @input-bc;
+      text-align: left;
+
+      .caret {
+        width: 5px;
+        height: 5px;
+        border: @btn-arrow;
+        border-width: 1px 1px 0 0;
+        position: absolute;
+        right: 7px;
+        top: 50%;
+        margin-top: -3px;
+        transform: @rotate-135;
+        z-index: 1;
+      }
+
+      &.error {
+        background-color: @error-bc;
+        color: @white;
+      }
+
+      &.dropdown-toggle:hover {
+        border-color: @input-bc;
+      }
+
+      &.dropdown-toggle:focus {
+        border-color: @input-bc;
+      }
+
+      &.dropdown-toggle:active {
+        border-color: @input-bc;
+      }
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 19px;
+        background-color: @input-bc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@import (reference) "~components/styles/mixins";
+@import (reference) "~components/styles/variables";
+@import (reference) "~components/styles/epam-theme/less/uui-fonts";
+
+@tabs-table-header: 50px;
+@tabs-table-footer: 56px;
+@contentheight: 120px;
+
+.oui-btns-wrapper {
+  height: 100%;
+
+  &:before {
+    .oui-ib-va-middle;
+  }
+}
+
+.oui-content-header-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .oui-content-header-element {
+    display: inline-block;
+    padding-left: 20px;
+
+    &:first-child {
+      padding-right: 20px;
+      padding-left: 0;
+      border-right: 1px solid @gray;
+
+    }
+
+    &__header { color: @gray; }
+
+    &__text {
+      display: inline-block;
+      font-family: @Source_Sans_Pro_Semibold;
+      color: @gray-devil;
+
+    }
+  }
+}
+
+.oui-gray-link {
+  text-decoration: none;
+  color: @gray-devil;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+    color: @gray-devil;
+
+  }
+}
+
+.oui-blue-link {
+  text-decoration: none;
+  color: @blue-dark;
+
+  a {
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+      color: @blue-dark;
+    }
+  }
+}
+
+.oui-requests-table {
+  height: calc(100% ~ '-' @tabs-table-header ~ '-' @tabs-table-footer);
+
+  .oui-table-header {
+    line-height: @tabs-table-header;
+    height: @tabs-table-header;
+
+    &__control {
+      padding-left: 20px;
+
+      .multi-control{
+        width: 22px;
+        height: 22px;
+        padding: 0 3px;
+        font-size: 15px;
+        border: none;
+        color: #fff;
+
+        &--approve {
+          background-color: @green-light;
+        }
+
+        &--close {
+          background-color: @orange-light;
+        }
+      }
+    }
+  }
+
+  .oui-table-footer {
+    height: @tabs-table-footer;
+    line-height: @tabs-table-footer;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    .pull-left {
+      font-family: @Source_Sans_Pro_Semibold;
+
+    }
+
+    .oui-pagination {
+      margin-top: 12px;
+
+    }
+  }
+}
+
+.ui-grid-disable-selection {
+  margin: -5px 0 0 -3px;
+}
+
+.ui-grid-selection-row-header-buttons {
+
+  color: transparent;
+  opacity: 0.2;
+
+  &:before {
+
+    border: 1px solid black;
+  }
+
+  &.ui-grid-row-selected,
+  &.ui-grid-all-selected {
+
+    opacity: 1;
+
+    &:before {
+
+      border: none;
+      background-color: @blue;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .oui-content-header-wrapper {
+    .oui-content-header-element:first-child { border: none; }
+  }
+
+}

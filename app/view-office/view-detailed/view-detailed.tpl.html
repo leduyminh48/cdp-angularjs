@@ -1,0 +1,20 @@
+<!--view-detailed.tpl.html-->
+<osm-content-header>
+  <div class="oui-btns-wrapper">
+    <button class="oui-button"
+            ng-click="view.createPlace()">Add new place
+    </button>
+  </div>
+  <div class="oui-content-header-wrapper">
+    Office breadcrumb
+    <a href=""
+       ng-repeat="area in view.tableSettings.areas">{{ area.name }}</a><br/>
+  </div>
+</osm-content-header>
+<div class="oui-content-wrapper">
+  <div class="oui-offices-detailed-table">
+    <div ui-grid="view.tableSettings"
+         ui-grid-auto-resize>
+    </div>
+  </div>
+</div>

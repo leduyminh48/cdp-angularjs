@@ -1,0 +1,112 @@
+<!--tabs.tpl.html-->
+<div class="oui-tab-container">
+  <div class="oui-tabs-content oui-tabs-main">
+    <form method="post">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 oui-block-left">
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Request ID:</strong>
+          <input class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text" value="{{ :: ctrl.info.id }}" type="text"
+                 disabled/>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Employee 1: </strong>
+          <osm-person-telescope-link
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            person-name=":: ctrl.info.employeeFrom.fullName">
+          </osm-person-telescope-link>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Current place 1: </strong>
+          <osm-breadcrumb
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            breadcrumb-items=":: ctrl.info.from">
+          </osm-breadcrumb>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Employee 2: </strong>
+          <osm-person-telescope-link
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            person-name=":: ctrl.info.employeeTo.fullName">
+          </osm-person-telescope-link>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Current place 2: </strong>
+          <osm-breadcrumb
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            breadcrumb-items=":: ctrl.info.to">
+          </osm-breadcrumb>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Create time: </strong>
+          <input class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+                 value="{{ :: ctrl.info.date | date : 'shortDate' }}"
+                 type="text" disabled/>
+        </label>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 oui-block-right">
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">State: </strong>
+          <osm-request-status status=":: ctrl.info.state"
+                              status-indicator=":: ctrl.info.inProgressType"
+                              class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text">
+          </osm-request-status>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Resource manager: </strong>
+          <osm-person-telescope-link
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            person-name=":: ctrl.info.resourceManagerFrom.fullName">
+          </osm-person-telescope-link>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Room owner: </strong>
+          <osm-person-telescope-link
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            person-name=":: ctrl.info.roomOwnerFrom.fullName">
+          </osm-person-telescope-link>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Resource manager: </strong>
+          <osm-person-telescope-link
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            person-name=":: ctrl.info.resourceManagerTo.fullName">
+          </osm-person-telescope-link>
+        </label>
+
+        <label class="row oui-row">
+          <strong class="col-lg-2 col-md-3 col-sm-3 col-xs-3 oui-row__header">Room owner: </strong>
+          <osm-person-telescope-link
+            class="col-lg-10 col-md-9 col-sm-9 col-xs-9 oui-row__text"
+            person-name=":: ctrl.info.roomOwnerTo.fullName">
+          </osm-person-telescope-link>
+        </label>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 oui-block-left">
+        <label class="row oui-row oui-row--special">
+          <strong class="col-md-1 col-sm-3 col-xs-3 oui-row__header oui-row__header--special">Comment: </strong>
+        <textarea class="col-md-10 col-sm-9 col-xs-9 oui-row__text oui-row__text--special" disabled>
+          {{ :: ctrl.info.comment }}
+        </textarea>
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="oui-button-container">
+  <button class="oui-button oui-button-red oui-tab-button">Cancel</button>
+      <span class="oui-tab-button">
+        <osm-button-back></osm-button-back>
+      </span>
+  <button class="oui-button oui-tab-button">Approve</button>
+</div>

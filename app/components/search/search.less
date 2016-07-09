@@ -1,0 +1,128 @@
+@import (reference) "~components/styles/variables";
+
+@search-banner-width: 150px;
+
+.dropdown-menu {
+  right: 0;
+
+  li {
+
+    .oui-people-search-item {
+      display: flex;
+      padding: 5px 10px;
+      font-family: "Source Sans Pro", "Trebuchet MS", sans-serif;
+      font-size: 16px;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+
+      &__photo {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+        flex-shrink: 0;
+        flex-basis: auto;
+        border: 2px solid #eee;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center 25%
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+          text-transform: capitalize;
+          color: @green_lime;
+        }
+
+        &-name {
+          text-transform: uppercase;
+          color: @blue;
+        }
+      }
+    }
+  }
+}
+
+.oui-people-search {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .oui-trash {
+    display: block;
+    width: 30px;
+    height: 30px;
+    mask-image: url('../images/Popups/delete.svg');
+    background-color: @gray-icon;
+
+    &:hover {
+      background-color: @red-bright;
+
+    }
+  }
+
+  .oui-search__input-banner {
+    display: none;
+  }
+}
+
+.oui-search__clear {
+  color: @gray;
+  font-size: 20px;
+
+  &:hover {
+    color: @raspberry;
+    cursor: pointer;
+  }
+}
+
+.oui-global-search {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .oui-search__input {
+    width: 30px;
+    padding-left: @search-banner-width + 20px;
+    border-radius: 17px;
+    background-color: @gray-devil;
+    border-color: @gray-devil;
+    transition: width 0.5s 0.5s, background-color 0.5s 0.5s;
+
+    &:focus ~ .oui-search__input-banner,
+    &.ng-not-empty ~ .oui-search__input-banner {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    &:focus,
+    &.ng-not-empty {
+      width: 400px;
+      background-color: @white;
+    }
+  }
+
+  .oui-search__input-banner {
+    white-space: nowrap;
+    padding-top: 5px;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    height: 25px;
+    margin-top: -12px;
+    border-radius: 12.5px;
+    width: @search-banner-width;
+    background-color: @blue;
+    color: @white;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s 0.5s, z-index 0.5s 0.5s;
+  }
+}

@@ -1,0 +1,91 @@
+@import (reference) "~components/styles/variables";
+
+.oui-room-status {
+  display: block;
+  padding: 3px 0;
+  text-transform: uppercase;
+  width: 90px;
+  color: #fff;
+  text-align: center;
+  &--occupied {
+    background-color:@raspberry;
+  }
+  &--free {
+    background-color: @green_lime;
+  }
+  &--reserved {
+    background-color: @blue;
+  }
+  &--technical {
+    background-color: @gray;
+  }
+  &--disabled {
+    background-color: @gray;
+  }
+}
+
+.oui-request-status {
+  text-decoration: none;
+
+}
+
+.oui-status-cell {
+  padding-left: 15px;
+}
+
+.oui-status-link {
+  text-decoration: none;
+  color: @gray-devil;
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    span {
+      text-decoration: underline;
+      color: @gray-devil;
+    }
+  }
+
+  &--in-progress {
+    cursor: default;
+  }
+
+  .oui-status-indicator {
+    padding-left: 15px;
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      width: 10px;
+      height: 10px;
+      margin: -5px 0 0 -5px;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+    }
+
+    &--blocked-middle {
+
+      &:before {
+        background-color: @raspberry;
+      }
+    }
+    &--blocked-end {
+
+      &:before {
+        background-color: @orange;
+      }
+    }
+    &--valid {
+
+      &:before {
+        background-color: @green_lime;
+      }
+    }
+  }
+}

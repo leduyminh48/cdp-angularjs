@@ -1,0 +1,204 @@
+@import (reference) "~components/styles/variables";
+@import (reference) "~components/styles/epam-theme/less/uui-form-elements";
+
+@modal-header-height: 60px;
+
+.modal-dialog {
+  width: 760px;
+  margin: 100px auto;
+  max-width: 95%;
+
+  .oui-label {
+    display: block;
+  }
+
+  osm-progress-bar {
+    display: block;
+
+    .oui-progress-bar-content {
+
+      &:after {
+        content: '';
+        height:0;
+        clear: both;
+        display: block;
+
+      }
+
+    }
+  }
+
+  .row {
+    min-height: 34px;
+    padding-bottom: 16px;
+    line-height: 34px;
+
+    .oui-breadcrumb {
+      display: inline;
+      font-size: @fs-14;
+
+    }
+
+    a {
+      font-family: @Source_Sans_Pro_Semibold;
+      font-size: @fs-15;
+    }
+
+    label {
+      font-size: @fs-15;
+      margin-bottom: 0;
+    }
+
+    //styles for typeahead
+    .oui-typeahead {
+
+      .oui-input {
+        max-width: 345px;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .oui-clear-text {
+        background: url('../images/basket.png') no-repeat 0 0;
+        width: 13px;
+        height: 18px;
+        display: inline-block;
+        cursor: pointer;
+        vertical-align: middle;
+
+        &:hover {
+          background-position: 0 -18px;
+        }
+      }
+    }
+  }
+
+  &.modal-lg {
+    width: 760px;
+    margin: 100px auto;
+  }
+
+  .modal-content {
+    box-shadow: none;
+    border: none;
+
+    .oui-modal {
+      display: block;
+
+      .oui-modal-header {
+        background-color: @gray-dark;
+        display: block;
+        padding: 0 30px;
+        margin-bottom: 30px;
+        position: relative;
+
+        h2 {
+          color: @white;
+          margin: 0;
+          font-size: @fs-14;
+          height: @modal-header-height;
+          line-height: @modal-header-height;
+          font-family: @Oswald_Bold;
+        }
+
+        .oui-modal-close {
+          position: absolute;
+          right: 30px - ((40px - 12px) / 2);
+          top: 23px - ((40px - 12px) / 2);
+          height: 40px;
+          width: 40px;
+          background: url("../images/modal-close-btn.png") no-repeat 50% 50%;
+          cursor: pointer;
+          border: none;
+        }
+      }
+
+      .oui-modal-wrapper {
+        padding: 0 30px;
+        min-height: 80px;
+
+        .oui-textarea {
+          height: 90px;
+        }
+
+        .oui-breadcrumb {
+          font-size: @fs-16;
+          color: @gray-devil;
+
+          & > li {
+
+            &:before {
+              margin-top: -2px;
+            }
+          }
+        }
+      }
+
+
+
+      .oui-modal-footer {
+        padding: 0 30px 30px;
+
+        &:after {
+          content: '';
+          clear: both;
+          display: block;
+
+        }
+
+        .oui-note {
+          color: @gray;
+
+        }
+
+        .col-lg-8 {
+          padding: 0;
+        }
+
+        .col-lg-4 {
+          padding: 0;
+        }
+
+        .oui-btn-wrapper {
+          float: right;
+          padding-left: 20px;
+
+          //TODO: Move these styles (buttons related into separate less file in styles)
+          .oui-button {
+            &:extend(.uui-button);
+            min-width: 74px;
+            line-height: @button-height;
+            height: @button-height;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: @fs-14;
+            padding: 0 12px;
+            border: none;
+            margin-left: 8px;
+            font-family: @Oswald_Bold;
+          }
+
+          .btn-submit {
+            background-color: @green-light;
+
+            &[disabled] {
+              background-color: @gray-dark;
+            }
+          }
+
+          .btn-cancel {
+            background-color: @gray;
+          }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .oui-note {
+          padding-bottom: 10px;
+
+        }
+      }
+    }
+  }
+}
+

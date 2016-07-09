@@ -1,0 +1,20 @@
+<div class="ui-grid-cell-contents"
+     title="TOOLTIP">
+  <div class="pull-right"
+       ng-hide="grid.api.selection.isMultipleSelected">
+    <a href="#"
+       ng-if="row.entity.actions.APPROVE"
+       class="oui-table-btn oui-ok"
+       ng-click="grid.methods.approveRequest(row.entity)"></a>
+    <a href="#"
+       class="oui-table-btn oui-pencil"
+       ng-click="grid.methods.editRequest(row.entity)"></a>
+    <a href="#"
+       class="oui-table-btn oui-remove"
+       ng-click="grid.methods.closeRequest(row.entity)"></a>
+    <a href="#"
+       ng-if="row.entity.actions.DELETE"
+       class="oui-table-btn oui-trash"
+       ng-click="grid.methods.deleteRequest(row.entity)"></a>
+  </div>
+</div>

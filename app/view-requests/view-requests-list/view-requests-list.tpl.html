@@ -1,0 +1,49 @@
+<!--view-requests-list.tpl-->
+<osm-content-header>
+  <div class="oui-btns-wrapper">
+    <button class="oui-button oui-button--movement-icon"
+            ng-click="view.createMovementRequest()">Movement request
+    </button>
+    <button class="oui-button oui-button--swap-icon"
+            ng-click="view.createSwapRequest()">Swap request
+    </button>
+  </div>
+  <div class="oui-content-header-wrapper" ng-include="view.userInfoTpl"></div>
+</osm-content-header>
+
+<osm-tabs class="oui-content-wrapper">
+  <a ui-sref=".parameters({ state: 'active' })"
+     ui-sref-active="active">Active</a>
+  <a ui-sref=".parameters({ state: 'closed' })"
+     ui-sref-active="active">Closed request</a>
+  <osm-tabs-content>
+    <div class="oui-requests-table">
+      <div class="oui-table-header">
+        <div class="oui-table-header__control"
+             ng-if="view.isMultipleSelected">
+          <button class="multi-control multi-control--approve glyphicon glyphicon-ok"
+                  ng-if="view.isRequestToApproveSelected"
+                  ng-click="view.approveRequestMultiple()"></button>
+          <button class="multi-control multi-control--close glyphicon glyphicon-remove"
+                  ng-click="view.closeRequestMultiple()"></button>
+          <span>({{ view.getSelectedRows().length }} selected)</span>
+          <a href=""
+             ng-click="view.gridApi.selection.clearSelectedRows()"
+             role="button">Unselected all</a>
+        </div>
+      </div>
+      <div ui-grid="view.table"
+           ui-grid-selection
+           ui-grid-auto-resize></div>
+      <div class="oui-table-footer">
+        <div class="pull-left">Showing 1 to 1 of 1 requests</div>
+        <osm-request-pagination per-page="view.pageSize"
+                                current-page="view.pageNumber"
+                                move-pagination="view.movePagination(direction)"
+                                total-pages-amount="view.totalPagesAmount"></osm-request-pagination>
+      </div>
+    </div>
+  </osm-tabs-content>
+</osm-tabs>
+
+<span ui-view></span>

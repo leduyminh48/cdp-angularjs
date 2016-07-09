@@ -1,0 +1,22 @@
+<div class="oui-content-header-element">
+  <strong class="oui-content-header-element__header">My office: </strong>
+  <osm-breadcrumb
+    class="oui-content-header-element__text"
+    breadcrumb-items=":: view.userInfo.unitPath">
+  </osm-breadcrumb>
+</div>
+<div class="oui-content-header-element">
+  <strong class="oui-content-header-element__header">Unit:</strong>
+  <span class="oui-content-header-element__text">{{:: view.userInfo.unit}}</span>
+</div>
+<div class="oui-content-header-element">
+  <strong class="oui-content-header-element__header">Number of room:</strong>
+      <span class="oui-content-header-element__text">
+        <ng-pluralize count="view.userInfo.place.floor"
+                      when="{'1': '1st',
+                             '2': '2nd',
+                             'other': '{{ view.userInfo.place.floor}}th'}">
+        </ng-pluralize>
+         floor - Area {{:: view.userInfo.place.area}}
+      </span>
+</div>

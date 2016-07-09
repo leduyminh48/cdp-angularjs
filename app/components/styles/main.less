@@ -1,0 +1,39 @@
+@import (reference) "./variables";
+@import (reference) "./mixins";
+
+html {
+  height:100%;
+  overflow: auto!important;
+
+  body {
+    background: #ebeef0;
+    height:100%;
+
+    .oui-container {
+      padding: 0 60px;
+
+      .oui-inner-wrapper {
+        height: 100%;
+        width: 100%;
+
+      }
+
+      &.wrapper {
+        height:100%;
+
+      }
+
+      main.oui-main-container {
+        height: 100%;
+        margin: 0;
+      }
+    }
+
+    .oui-vertical-align {
+      display: inline-flex;
+      vertical-align: middle;
+      margin-right: -4px;
+      float: none;
+    }
+  }
+}

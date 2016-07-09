@@ -1,0 +1,74 @@
+@import (reference) "~components/styles/variables";
+
+@telescope-logo-size: 44px;
+
+.oui-telescope {
+  display: flex;
+  position: relative;
+  padding-left: 20px;
+  border-left: 1px solid darken(@gray-dark, 5.7%);
+  height: 100%;
+  width: 65px;
+
+  &__photo {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-size: contain;
+    height: @telescope-logo-size;
+    width: @telescope-logo-size;
+    border-radius: 50%;
+    margin-top: -calc(@telescope-logo-size ~ '/' 2);
+  }
+
+  &__dropdown{
+    position: absolute;
+    background: @white;
+    display: none;
+    top: 62px;
+    right: 0;
+    left: auto;
+    font-family: @Oswald_Regular;
+    font-size: @fs-16;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 0 8px 0 @gray-light;
+    text-decoration: none;
+    padding: 0;
+    min-width: 0;
+
+      & > li {
+
+        & > a {
+          padding: 14px 30px;
+          display: block;
+          text-decoration: none;
+          color: @blue;
+
+          &:hover,
+          &:active {
+            text-decoration: none;
+            background-color: darken(@white, 2%);
+            color: @blue;
+          }
+        }
+      }
+
+    &.oui-dropdown-open {
+      display: inline-block;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      border-left: 10px solid rgba(255,241,190,0);
+      border-right: 10px solid rgba(255,241,190,0);
+      border-bottom: 10px solid @white;
+      position: absolute;
+      top: -9px;
+      right: 12px;
+    }
+  }
+}

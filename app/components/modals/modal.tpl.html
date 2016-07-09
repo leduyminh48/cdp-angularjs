@@ -1,0 +1,28 @@
+<form name="osmModal.form" class="oui-modal">
+  <div class="oui-modal-header">
+    <h2>{{:: osmModal.title }}</h2>
+    <button class="oui-modal-close"
+            ng-click="$dismiss('Close')"></button>
+  </div>
+  <osm-progress-bar is-active="osmModal.isLoading">
+    <div class="oui-modal-wrapper"
+         ng-include=":: osmModal.templateUrl"></div>
+
+  <div class="oui-modal-footer">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+      <div class="oui-note" ng-if=":: !!osmModal.note">
+        <strong>Note:</strong> {{:: osmModal.note}}
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="oui-btn-wrapper">
+        <button class="oui-button btn-cancel"
+                ng-click="$dismiss('Cancel')">{{:: osmModal.cancelTitle }}</button>
+        <button class="oui-button btn-submit"
+                ng-disabled="osmModal.form.$invalid"
+                ng-click="osmModal.submit(this)">{{:: osmModal.submitTitle }}</button>
+      </div>
+    </div>
+  </div>
+  </osm-progress-bar>
+</form>

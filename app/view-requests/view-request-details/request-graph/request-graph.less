@@ -1,0 +1,101 @@
+@import (reference) "~components/styles/variables";
+@import (reference) "~components/styles/epam-theme/less/uui-fonts";
+
+.oui-graph-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .oui-graph {
+    position: relative;
+    width: 240px;
+    font-family: @Source_Sans_Pro_Regular;
+    font-size: 15px;
+    margin: 0 55px 45px 0;
+    padding: 20px;
+    border-radius: 5px;
+    list-style: none;
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 14px;
+      height: 12px;
+      background: @input-bc;
+      position: absolute;
+      top: 75px;
+      right: -30px;
+
+    }
+
+    &:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-left: 14px solid @input-bc;
+      border-bottom: 10px solid transparent;
+      position: absolute;
+      top: 71px;
+      right: -44px;
+
+    }
+
+    &:last-of-type {
+      &:before,
+      &:after {
+        display: none;
+
+      }
+    }
+
+    .oui-item {
+      margin-bottom: 10px;
+
+    }
+
+    .oui-label {
+      display: inline-block;
+      min-width: 40px;
+      margin-right: 20px;
+
+    }
+
+    .oui-text {
+      color: @white;
+
+      a {
+        color: @white;
+
+      }
+    }
+
+    .oui-address {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 137px;
+      overflow: hidden;
+
+    }
+
+    &-green {
+      background: @green-light;
+
+      .oui-label {
+        color: @green-dark;
+
+      }
+    }
+
+    &-red {
+      background: @pink;
+      //.border: 1px solid @cranberry;
+
+      .oui-label {
+        color: @plum;
+
+      }
+    }
+  }
+
+}

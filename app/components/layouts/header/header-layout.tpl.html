@@ -1,0 +1,66 @@
+<!--header-layout.tpl.html-->
+<header>
+  <div class="uui-header oui-header oui-container">
+    <nav>
+      <a class="brand-logo oui-logo" uib-tooltip="Logo">
+        <img src="../../images/Logo_OSM.svg" alt="" width="50"/>
+        <span>
+          OSMP
+        </span>
+      </a>
+      <input class="oui-collapse-check" type="checkbox" id="nav" />
+      <label class="oui-collapse-label" for="nav"></label>
+      <div class="oui-nav-items">
+      <ul class="uui-navigation nav navbar-nav">
+        <li ng-class="{ active: header.linkIsActive('main.requests') }">
+          <a ui-sref="main.requests.list.parameters">Requests</a>
+        </li>
+        <li class="dropdown"
+            uib-dropdown
+            ng-class="{ active: header.linkIsActive('main.office') }">
+          <a href="#" class="dropdown-toggle"
+             uib-dropdown-toggle>
+            Office
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu"
+              role="menu"
+              uib-dropdown-menu>
+            <li ui-sref-active="active">
+              <a ui-sref="main.office.tree({ mode: 'physical', id: 'city' })">Physical view</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="main.office.tree({ mode: 'logical', id: 'city' })">Logical view</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a ui-sref="main.search">Search</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="main.child">Child</a>
+        </li>
+      </ul>
+      <div class="oui-header-right-wrapper">
+          <div class="oui-search-container">
+          <osm-global-search search="header.search"
+                             min-input-length="1"
+                             on-select="header.updatePage(match)"
+                             on-query="header.searchPerson(query)"
+                             wait-ms="200"
+                             disabled="false"
+                             clearable="false"></osm-global-search>
+          </div>
+
+          <div class="oui-show-map">
+            <a class="oui-show-map__link">show map</a>
+          </div>
+
+        <osm-logout></osm-logout>
+      </div>
+      </div>
+    </nav>
+
+    </div>
+  </div>
+</header>

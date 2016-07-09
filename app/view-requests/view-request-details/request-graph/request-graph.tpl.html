@@ -1,0 +1,33 @@
+<!--tab-graph.tpl.html-->
+
+<div class="oui-graph-container">
+  <ul class="oui-graph"
+      ng-repeat="request in ctrl.requests"
+      ng-class=":: 'oui-graph-' + request.status">
+    <li class="oui-item">
+      <strong class="oui-label">Emp:</strong>
+      <osm-person-telescope-link
+        class="oui-text"
+        person-name=":: request.employee">
+      </osm-person-telescope-link>
+    </li>
+    <li class="oui-item">
+      <strong class="oui-label">RM:</strong>
+      <osm-person-telescope-link
+        class="oui-text"
+        person-name=":: request.resourceManager">
+      </osm-person-telescope-link>
+    </li>
+    <li class="oui-item">
+      <strong class="oui-label">RO:</strong>
+      <osm-person-telescope-link
+        class="oui-text"
+        person-name=":: request.roomOwner">
+      </osm-person-telescope-link>
+    </li>
+    <li class="oui-item">
+      <strong class="oui-label">Place:</strong>
+      <span class="oui-text oui-address">{{:: request.place }}</span>
+    </li>
+  </ul>
+</div>

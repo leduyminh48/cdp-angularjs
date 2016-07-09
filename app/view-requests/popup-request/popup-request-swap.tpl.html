@@ -1,0 +1,106 @@
+<div class="oui-swap-request-wrapper">
+  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+    <div class="row">
+      <label class="oui-label">
+        <div>Employee*:</div>
+        <osm-people-search ng-model="view.employeeName"
+                           min-input-length="1"
+                           on-select="view.employeeSelected(match)"
+                           on-query="view.searchEmployee(query)"
+                           on-change="view.onEmployeeChanged()"
+                           disabled="view.request.employee.searchDisability"
+                           clearable="true"></osm-people-search>
+      </label>
+    </div>
+
+    <div class="row">
+      <label class="oui-label">
+        <div class="oui-swap__label">Resource Manager:</div>
+        <span class="oui-swap__value">
+          <osm-person-telescope-link person-name="view.request.employee.manager"></osm-person-telescope-link>
+        </span>
+      </label>
+    </div>
+
+    <div class="row oui-swap-breadcrumb">
+      <label class="oui-label">
+        <div class="oui-swap__label">Current location:</div>
+        <span class="oui-swap__value">
+          <osm-breadcrumb breadcrumb-items="view.currentLocation"></osm-breadcrumb>
+        </span>
+      </label>
+    </div>
+
+    <div class="row">
+      <label class="oui-label">
+        <div class="oui-swap__label">Room Owner:</div>
+        <span class="oui-swap__value">
+          <osm-person-telescope-link person-name="view.currentRoomOwner.fullname"></osm-person-telescope-link>
+        </span>
+      </label>
+    </div>
+
+  </div>
+
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 oui-swap-icon">
+    <span class="glyphicon glyphicon-refresh oui-swap-icon"></span>
+  </div>
+
+  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+    <div class="row">
+      <label class="oui-label">
+        <div>Employee*:</div>
+        <osm-people-search ng-model="view.occupiedByName"
+                           min-input-length="1"
+                           on-select="view.occupiedBySelected(match)"
+                           on-query="view.searchAccessible(query)"
+                           on-change="view.onOccupiedByChanged()"
+                           disabled="view.request.occupied.searchDisability"
+                           clearable="true"></osm-people-search>
+      </label>
+    </div>
+
+    <div class="row">
+      <label class="oui-label">
+        <div class="oui-swap__label">Resource Manager:</div>
+        <span class="oui-swap__value">
+          <osm-person-telescope-link person-name="view.request.occupied.manager"></osm-person-telescope-link>
+        </span>
+      </label>
+    </div>
+
+    <div class="row oui-swap-breadcrumb">
+      <label>
+        <div class="oui-swap__label">Current location:</div>
+        <span class="oui-swap__value">
+          <osm-breadcrumb breadcrumb-items="view.targetLocation"></osm-breadcrumb>
+        </span>
+      </label>
+    </div>
+
+    <div class="row">
+      <label class="oui-label">
+        <div class="oui-swap__label">Room Owner:</div>
+        <span class="oui-swap__value">
+          <osm-person-telescope-link person-name="view.targetRoomOwner.fullname"></osm-person-telescope-link>
+        </span>
+      </label>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <label class="oui-label">
+        <div class="oui-swap__label">Comments:</div>
+        <div class="oui-swap__value">
+          <textarea class="form-control oui-textarea"
+                    ng-model="view.request.comment"
+                    min="0"
+                    max="255">
+        </textarea>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>

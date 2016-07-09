@@ -1,0 +1,96 @@
+@import (reference) "~components/styles/variables";
+@import (reference) "~components/styles/epam-theme/less/uui-fonts";
+
+.oui-tabs-main {
+
+  .oui-block-right,
+  .oui-block-left {
+    padding-left: 0;
+
+  }
+
+  .oui-row {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    max-width: none;
+    font-weight: 300;
+
+    &--special { align-items: flex-start; }
+
+
+    &__text {
+      height: 30px;
+      padding: 5px 10px;
+      background-color: @input-disabled-bc;
+      border: 1px solid @input-border;
+      border-radius: 5px;
+      font-family: @Oswald_Regular;
+      text-overflow: ellipsis;
+      color: @main-text-color;
+
+      &--special {
+        height: 80px;
+        overflow: auto;
+
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .oui-tabs-main {
+
+    .oui-block-right {
+      padding-left: 15px;
+
+    }
+
+    .oui-row {
+
+      &__header {
+
+        &--special { width: 12.5%; }
+      }
+
+      &__header {
+
+        &--special { padding-left: 15px; }
+      }
+
+      &__text {
+
+        &--special {
+          width: 87.5%;
+          padding-left: 15px;
+
+        }
+      }
+    }
+  }
+}
+
+@media  (min-width: 1200px) {
+  .oui-tabs-main {
+
+    .oui-row {
+
+      &__header {
+
+        &--special {
+          width: 8.3%;
+
+        }
+      }
+
+      &__text {
+
+        &--special {
+          width: 91.7%;
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<div class="progress">
+  <div ng-repeat="(key, value) in view.placesData track by key"
+       class="progress-bar"
+       ng-style="{ 'width': view.calculateItemWidth(value) + '%' }">
+    {{ value }}
+    <span class="sr-only">{{ value }}</span>
+  </div>
+</div>

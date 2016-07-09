@@ -1,0 +1,6 @@
+<a ng-click="grid.api.treeBase.toggleRowTreeState(row, $event)"
+   ng-if="!row.treeLevel">
+  <span class="caret"></span>
+</a>
+<a href=""
+   ng-click="grid.appScope.view.goTo(row.entity)">{{ row.entity[col.field] }}</a>

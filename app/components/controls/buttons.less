@@ -1,0 +1,59 @@
+.oui-button {
+  min-width: 75px;
+  padding: 0 15px;
+  display: inline-block;
+  font-size: @fs-14;
+  font-family: @Oswald_Bold;
+  height: @button-height;
+  line-height: @button-height;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  background-color: @green-light;
+  color: @white;
+  cursor: pointer;
+
+  &.oui-button--movement-icon {
+    padding-left: 44px;
+    background: @green-light url("../images/icons/Movement Request.svg") no-repeat 15px 50%;
+    background-size: 21px auto;
+  }
+
+  &.oui-button--swap-icon {
+    padding-left: 40px;
+    background: @green-light url("../images/icons/Swap Request.svg") no-repeat 16px 50%;
+    background-size: 14px auto;
+  }
+
+  &:hover,
+  &.active {
+    background-color: @btn-dark-green;
+
+  }
+
+  &.oui-button-red {
+    background-color: @red-bright;
+
+    &:hover,
+    &.active {
+      background-color: @btn-dark-purple;
+
+    }
+  }
+
+  &.oui-button-gray {
+    background-color: @gray;
+
+    &:hover,
+    &.active {
+      background-color: @btn-dark-gray;
+
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: @btn-disable-bc !important;
+
+  }
+}

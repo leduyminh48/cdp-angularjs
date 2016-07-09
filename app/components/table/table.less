@@ -1,0 +1,173 @@
+@import (reference) "~components/styles/variables";
+@import (reference) "~components/styles/mixins";
+
+@glyphicon-color: #d7d7d7;
+@table-row-hover: #f5fcfd;
+@cell-border-color: #f3f4f4;
+@image-url: "../images/Grid/";
+
+.ui-grid {
+  height: 100%;
+  border: none;
+  background: @white;
+
+  .ui-grid-contents-wrapper {
+
+    .ui-grid-render-container-left,
+    .ui-grid-pinned-container-left  {
+      .ui-grid-viewport {
+        overflow: hidden !important;
+      }
+    }
+
+    .ui-grid-viewport {
+      overflow: auto !important;
+    }
+
+    .ui-grid-header {
+      border-color: @cell-border-color;
+
+      .ui-grid-header-cell {
+        border: none;
+
+      }
+    }
+
+    .ui-grid-top-panel {
+      background: none;
+    }
+
+    .ui-grid-row {
+      height: 37px;
+
+      .oui-ok {
+        background: url('@{image-url}/Approve_default.svg') 50% 50% ~'/' 70% 70% no-repeat;
+      }
+
+      .oui-pencil {
+        background: url('@{image-url}/Edit_default.svg') 50% 50% ~'/' 60% 60% no-repeat;
+      }
+
+      .oui-remove {
+        background: url('@{image-url}/Cancel_default.svg') 50% 50% ~'/' 55% 55% no-repeat;
+      }
+
+      .oui-trash {
+        background: url('@{image-url}/Remove_default.svg') 50% 50% ~'/' 90% 80% no-repeat;
+      }
+
+      &.ui-grid-row-selected {
+        background: @table-row-hover;
+      }
+
+      &.oui-disabled {
+
+        .ui-grid-cell {
+          background: none !important;
+
+          .oui-table-btn {
+            background-color: transparent !important;
+            opacity: 0.5;
+            cursor: default;
+
+          }
+        }
+      }
+
+      .ui-grid-cell {
+        background: none;
+        line-height: 26px;
+        border-right: none;
+        border-bottom: 1px solid @cell-border-color;
+        padding: 0 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        .oui-table-btn {
+          color: @glyphicon-color;
+          border: 1px solid @glyphicon-color;
+          width: 22px;
+          height: 21px;
+          line-height: 21px;
+          text-decoration: none;
+          display: inline-block;
+
+        }
+
+      }
+
+      &:hover:not(.oui-disabled){
+
+        .ui-grid-cell {
+          background: @table-row-hover;
+
+          .oui-table-btn {
+            color: @white;
+            border: 1px solid @glyphicon-color;
+            width: 22px;
+            height: 21px;
+            line-height: 21px;
+            text-align: center;
+
+            &.oui-ok {
+              background-color: @green-light;
+              border-color: @green-light;
+              background-image: url('@{image-url}/Approve.svg');
+
+              &:hover,
+              .active {
+                background-color: @btn-dark-green;
+                border-color: @btn-dark-green;
+
+              }
+            }
+
+            &.oui-pencil {
+              background-color: @blue;
+              border-color: @blue;
+              background-image: url('@{image-url}/Edit.svg');
+
+              &:hover,
+              .active {
+                background-color: @btn-dark-blue;
+                border-color: @btn-dark-blue;
+
+              }
+            }
+
+            &.oui-remove {
+              background-color: @orange-light;
+              border-color: @orange-light;
+              background-image: url('@{image-url}/Cancel.svg');
+
+              &:hover,
+              .active {
+                background-color: @btn-dark-orange;
+                border-color: @btn-dark-orange;
+
+              }
+            }
+
+            &.oui-trash {
+              background-color: @red-bright;
+              border-color: @red-bright;
+              background-image: url('@{image-url}/Remove.svg');
+
+              &:hover,
+              .active {
+                background-color: @btn-dark-purple;
+                border-color: @btn-dark-purple;
+
+              }
+            }
+          }
+        }
+
+        &.ui-grid-row-selected {
+          background: @table-row-hover;
+        }
+      }
+    }
+  }
+}

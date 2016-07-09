@@ -1,0 +1,9 @@
+<osm-multiple-select-units units="sample.units"
+                           start-type=":: sample.startType"
+                           finish-type=":: sample.finishType"
+                           init-type=":: sample.initType"
+                           on-change="sample.onChange(unit)"
+                           on-finish="sample.onFinish(unit)">
+</osm-multiple-select-units>
+<button class="btn btn-default"
+        ng-click="sample.setNewUnits()">Generate units</button>

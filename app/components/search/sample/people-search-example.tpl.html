@@ -1,0 +1,14 @@
+<div>
+  <p>Model selected: {{example.selected | json}}</p>
+  <button ng-click="example.selected = example.initial">Reset to initial value</button>
+  <div>Toggle disabled: <input type="checkbox" ng-model="example.searchDisability"></div>
+  <div>Toggle clear: <input type="checkbox" ng-model="example.searchClearability"></div>
+  <br/>
+  <osm-people-search ng-model="example.selected"
+                     min-input-length="1"
+                     on-select="example.setSelected(match)"
+                     on-query="example.onQuery(query)"
+                     wait-ms="1000"
+                     disabled="example.searchDisability"
+                     clearable="example.searchClearability"></osm-people-search>
+</div>

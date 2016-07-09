@@ -1,0 +1,100 @@
+@import (reference) "~components/styles/variables";
+@import (reference) "~components/styles/epam-theme/less/uui-fonts";
+
+.oui-pagination {
+  float: right;
+  list-style: none;
+  border: 1px solid @input-bc;
+  border-radius: 5px;
+  margin-bottom: 0;
+  height: 30px;
+  line-height: 0;
+  overflow: hidden;
+
+  > li {
+    font-family: @Source_Sans_Pro_Semibold;
+    display: inline-block;
+    box-sizing: border-box;
+    color: @blue-dark;
+
+    .oui-pagination__btn {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      background: @white;
+      border-radius: 0;
+
+      &[disabled="disabled"] {
+        background: @input-disabled-bc;
+
+      }
+
+      &:hover:not([disabled="disabled"]),
+      &:active,
+      &:focus {
+        background: #f3fafb;
+        outline: none;
+        box-shadow: none;
+        border: none;
+
+      }
+
+      &:before {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        border: @blue-dark;
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+        content: '';
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+      }
+
+      &[disabled="disabled"]:before {
+        border: @gray-medium;
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+
+      }
+    }
+
+    &.oui-pagination__prev {
+      button:before {
+        transform: rotate(225deg);
+        margin-top: -5px;
+        margin-left: -3px;
+
+      }
+    }
+
+    &.oui-pagination__next {
+      button:before {
+        transform: rotate(45deg);
+        margin-top: -5px;
+        margin-left: -7px;
+
+      }
+    }
+
+    &.oui-pagination__current {
+      span {
+        line-height: 30px;
+        display: inline-block;
+        width: 170px;
+        height: 30px;
+        margin: 0 -3px;
+        text-align: center;
+        vertical-align: middle;
+        border-left: 1px solid @input-bc;
+        border-right: 1px solid @input-bc;
+
+      }
+    }
+  }
+}
+
+

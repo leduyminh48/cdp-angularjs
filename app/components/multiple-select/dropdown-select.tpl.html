@@ -1,0 +1,20 @@
+<div class="btn-group"
+     uib-dropdown
+     keyboard-nav>
+  <button type="button"
+          class="btn btn-default"
+          uib-dropdown-toggle>
+    {{ select.getSelectedText() }} <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu"
+      aria-labelledby="simple-btn-keyboard-nav"
+      role="menu"
+      uib-dropdown-menu>
+    <li role="menuitem"
+        ng-repeat="item in select.list"
+        ng-click="select.onClick(item, $event)"
+        ng-keypress="select.onKeypress(item, $event)">
+      <a href="#">{{:: item[select.titleKey] }}</a>
+    </li>
+  </ul>
+</div>
